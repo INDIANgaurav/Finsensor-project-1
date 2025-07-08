@@ -50,15 +50,18 @@ export default function Dashboard() {
         </div>
 
         {/* Form and Calendar */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
-          {/* Form Section */}
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-4 w-full">
+  {/* Leave Form: 3/5 width */}
+  <div className="md:col-span-3">
+    <LeaveForm />
+  </div>
 
-          <LeaveForm />
+  {/* Calendar: 2/5 width */}
+  <div className="md:col-span-2">
+    <CalendarView />
+  </div>
+</div>
 
-          {/* Calendar Section */}
-
-          <CalendarView />
-        </div>
       </div>
     </div>
   );

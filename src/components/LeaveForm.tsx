@@ -37,51 +37,65 @@ const LeaveForm = () => {
 
   return (
     <>
-      <Form form={form} layout="vertical" onFinish={onFinish} requiredMark={false}>
+      <Form
+        form={form}
+        layout="vertical"
+        onFinish={onFinish}
+        requiredMark={false}
+        className="custom-form-spacing"
+      >
         <div className="flex items-center gap-2">
           <Form.Item
             label={
               <span className="font-medium">
-                Title  <span className="text-red-500">*</span>
+                Title <span className="text-red-500">*</span>
               </span>
             }
             name="title"
             rules={[{ required: true, message: "Please enter a title" }]}
             className=" w-full "
           >
-            <Input placeholder="Title" className="w-66" />
+            <Input placeholder="Title" className="" />
           </Form.Item>
 
-          <LuCalendarCog className="text-xl cursor-pointer hover:text-blue-800 text-blue-500   " />
+          <LuCalendarCog className="text-xl cursor-pointer hover:text-blue-800 text-blue-500 mt-4  " />
         </div>
 
-        <div className="flex justify-between items-start">
-          <label className="font-medium">
-            Select Leave Type <span className="text-red-500">*</span>
-          </label>
-
-          <div className="flex flex-col items-end">
-            <span className="text-sm font-medium">Partial Day</span>
-            <div className="flex items-center gap-2">
-              <Form.Item name="partial" valuePropName="checked" noStyle>
-                <Switch />
-              </Form.Item>
-              <span className="text-gray-600 text-sm">Off</span>
-            </div>
-          </div>
+<div className="flex flex-row justify-between w-full gap-4 items-start">
+  {/* Left: Leave Type + Radio */}
+  <div className="flex flex-col w-1/2">
+    <label className="font-medium mb-[5px]">
+      Select Leave Type <span className="text-red-500">*</span>
+    </label>
+    <Form.Item
+      name="type"
+      rules={[{ required: true, message: "Please select leave type" }]}
+      className="mb-[5px]"
+    >
+      <Radio.Group>
+        <div className="flex flex-wrap gap-1 ">
+          <Radio value="PTO">PTO</Radio>
+          <Radio value="Sick">Sick</Radio>
+          <Radio value="Vacation">Vacation</Radio>
+          <Radio value="Comp off">Comp off (off in lieu) </Radio>
         </div>
+      </Radio.Group>
+    </Form.Item>
+  </div>
 
-        <Form.Item
-          name="type"
-          rules={[{ required: true, message: "Please select leave type" }]}
-        >
-          <Radio.Group className="flex flex-wrap gap-4 mt-2">
-            <Radio value="PTO">PTO</Radio>
-            <Radio value="Sick">Sick</Radio>
-            <Radio value="Vacation">Vacation</Radio>
-            <Radio value="Comp off">Comp off (off in lieu)</Radio>
-          </Radio.Group>
-        </Form.Item>
+  {/* Right: Partial Day Switch */}
+  <div className="flex flex-col items-end w-1/2">
+    <span className="text-sm font-medium mb-[5px]">Partial Day</span>
+    <div className="flex items-center gap-1">
+      <Form.Item name="partial" valuePropName="checked" noStyle>
+        <Switch />
+      </Form.Item>
+      <span className="text-gray-600 text-sm">Off</span>
+    </div>
+  </div>
+</div>
+
+
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <Form.Item

@@ -49,3 +49,7 @@
   color: #ffffff;                    
 }
 
+
+.custom-form-spacing .ant-form-item {
+  margin-bottom: 5px !important;
+}

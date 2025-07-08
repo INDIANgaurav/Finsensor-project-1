@@ -8,7 +8,7 @@ export const leaveColors = {
 };
 
 export const dummyLeaves: LeaveEvent[] = [
-  { title: 'Umesh Taylor', date: '2025-07-02', type: 'PTO' },
-  { title: 'Gaurav Taylor', date: '2025-07-10', type: 'Sick' },
-  { title: 'Aryan Taylor', date: '2025-07-20', type: 'Vacation' },
+  { title: 'Umesh ', date: '2025-07-02', type: 'PTO' },
+  { title: 'Gaurav ', date: '2025-07-10', type: 'Sick' },
+  { title: 'Aryan ', date: '2025-07-20', type: 'Vacation' },
 ];

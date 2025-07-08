@@ -7,7 +7,7 @@ interface Props {
 export default function LeaveCard({ type, used, total }: Props) {
   return (
     <div
-      className={`rounded-lg text-white px-14 py-1  text-center shadow ${"bg-blue-900"}`}
+      className={`rounded-[4px] text-white px-14 py-1  text-center shadow ${"bg-blue-900"}`}
     >
       <p className="text-xl font-semibold  ">
         {used}/{total}
